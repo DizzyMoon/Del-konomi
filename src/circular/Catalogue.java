@@ -1,7 +1,7 @@
 package circular;
 
 public class Catalogue {
-  private Item[] itemList;
+  private final Item[] itemList;
 
   public Catalogue(int catalogueSize) {
     this.itemList = new Item[catalogueSize];
@@ -16,17 +16,7 @@ public class Catalogue {
     return -1;
   }
 
-  public int arrayIndexOf(String[] arrayIn, String input) {
-    for (int i = 0; i < arrayIn.length; i++) {
-      if (arrayIn[i] == input) {
-        return i;
-      }
-    }
-    return -1;
-  }
-
   public Item[] getFullList() {
-
     return this.itemList;
   }
 
@@ -40,15 +30,12 @@ public class Catalogue {
   }
 
   public Item[] getAvailableItems() {
-    Item[] availableItems = new Item[0];
+    Item[] availableItems;
     int j = 0;
     int k = 0;
     for (int i = 0; i < this.itemList.length; i++) {
       if (this.itemList[i] != null && this.itemList[i].getAvailable()) {
         j++;
-      } else if (this.itemList[i] == null) {
-        this.itemList[i] = new Item("Empty", "Empty");
-        this.itemList[i].setAvailable(false);
       }
     }
     availableItems = new Item[j];

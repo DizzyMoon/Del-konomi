@@ -11,7 +11,13 @@ public class Item {
     }
 
     public String toString(){
-        return category + ", " + description + ", " + available;
+        String rentalStatus;
+        if (this.available){
+            rentalStatus = "Available";
+        }   else {
+            rentalStatus = "Unavailable";
+        }
+        return category + ", " + description + " - " + "Rental Status: " + rentalStatus;
     }
 
     public String getCategory() {

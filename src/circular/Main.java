@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        new Main().execute();
+    }
+
+    private void execute(){
 
         //Declare and initialize variables
         Catalogue catalogue = new Catalogue(10);
@@ -110,8 +114,7 @@ public class Main {
         System.out.println("Closing application...");
     }
 
-    private static void displayItemList(Item[] itemList) {
-
+    private void displayItemList(Item[] itemList) {
         for (int i = 0; i < itemList.length; i++) {
             if(!(itemList[i] == null)) {
                 System.out.print(i + 1 + ". ");

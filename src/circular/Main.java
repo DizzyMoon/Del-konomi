@@ -39,11 +39,7 @@ public class Main {
                         }
                     }
                     if (!empty) {
-                        for (int i = 0; i < allItems.length; i++) {
-                            if (!(allItems[i] == null)) {
-                                System.out.println(allItems[i]);
-                            }
-                        }
+                        displayItemList(catalogue.getFullList());
                     } else {
                         System.out.println("There are no items in catalogue");
                     }
@@ -69,6 +65,9 @@ public class Main {
                     String itemDesc = sc.nextLine();
                     Item itemTmp = new Item(itemCat, itemDesc);
                     catalogue.addItem(itemTmp);
+                    System.out.println("Created item: '" + itemCat + "', '" + itemDesc + "'");
+                    System.out.println("Press enter to continue");
+                    sc.nextLine();
                 }
                 case 4 -> {
                     System.out.println("----------ITEM LIST----------");
@@ -97,7 +96,11 @@ public class Main {
                 case 6 -> {
                     System.out.print("Input catalogue size: ");
                     int catSize = sc.nextInt();
+                    sc.nextLine();
                     catalogue = new Catalogue(catSize);
+                    System.out.println("Created catalogue with size: " + catSize);
+                    System.out.println("Press enter to continue");
+                    sc.nextLine();
                 }
                 case 7 -> running = false;
             }

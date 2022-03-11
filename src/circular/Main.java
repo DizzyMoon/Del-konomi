@@ -14,8 +14,8 @@ public class Main {
         boolean running = true;
 
         while (running) {
-            System.out.println("----------MAIN MENU----------");
             System.out.print("""
+                    ----------MAIN MENU----------
                     1. Display catalogue
                     2. Display available items
                     3. Add item to catalogue
@@ -74,7 +74,6 @@ public class Main {
                     sc.nextLine();
                 }
                 case 4 -> {
-                    System.out.println("----------ITEM LIST----------");
                     Item[] allItems = catalogue.getFullList();
                     displayItemList(allItems);
                     System.out.print("Choose which machine to mark as rented: ");
@@ -86,7 +85,6 @@ public class Main {
                     sc.nextLine();
                 }
                 case 5 -> {
-                    System.out.println("----------ITEM LIST----------");
                     Item[] allItems = catalogue.getFullList();
                     displayItemList(allItems);
                     System.out.print("Choose which item to mark as returned: ");
@@ -115,6 +113,7 @@ public class Main {
     }
 
     private void displayItemList(Item[] itemList) {
+        System.out.println("----------ITEM LIST----------");
         for (int i = 0; i < itemList.length; i++) {
             if(!(itemList[i] == null)) {
                 System.out.print(i + 1 + ". ");
